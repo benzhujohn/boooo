@@ -428,6 +428,69 @@
     });
   }
 
+  /* ---------- 13. 邮箱反爬（base64 重组） ---------- */
+  function initMailGuard() {
+    [].slice.call(doc.querySelectorAll('[data-mail]')).forEach(function (a) {
+      var mail = '';
+      try { mail = atob(a.getAttribute('data-mail')); } catch (e) { return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) return;
+      a.textContent = mail;
+      a.setAttribute('href', 'mailto:' + mail);
+    });
+  }
+
+  /* ---------- 14. 微信一键复制 ---------- */
+  function initWxCopy() {
+    [].slice.call(doc.querySelectorAll('[data-copywx]')).forEach(function (btn) {
+      if (btn.dataset.wxInit) return;
+      btn.dataset.wxInit = '1';
+      btn.addEventListener('click', function () {
+        var wx = btn.getAttribute('data-copywx');
+        function done() {
+          btn.classList.add('is-copied');
+          clearTimeout(btn._wxT);
+          btn._wxT = setTimeout(function () { btn.classList.remove('is-copied'); }, 1800);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(wx).then(done, function () { legacy(); });
+        } else { legacy(); }
+        function legacy() {
+          var ta = doc.createElement('textarea');
+          ta.value = wx;
+          ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+          doc.body.appendChild(ta);
+          ta.select();
+          try { doc.execCommand('copy'); done(); } catch (e) {}
+          ta.parentNode.removeChild(ta);
+        }
+      });
+    });
+  }
+
+  /* ---------- 15. Hero 视频背景（可见才播，省流量） ---------- */
+  function initHeroVideo() {
+    var v = doc.querySelector('.hero__video');
+    if (!v || v.dataset.heroInit) return;
+    v.dataset.heroInit = '1';
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    // 尊重 reduced-motion：不自动播放
+    var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mq.matches) { v.removeAttribute('autoplay'); return; }
+    // 页签隐藏时暂停
+    doc.addEventListener('visibilitychange', function () {
+      if (doc.hidden) { v.pause(); }
+      else { v.play().catch(function () {}); }
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { v.play().catch(function () {}); }
+        else { v.pause(); }
+      });
+    }, { threshold: 0.05 });
+    io.observe(v);
+  }
+
   /* ---------- 启动 ---------- */
   function ready(fn) {
     if (doc.readyState !== 'loading') fn();
@@ -435,6 +498,7 @@
   }
 
   ready(function () {
+    root.classList.add('js');
     collectNavZones();
     Reveal.init();
     initPeek();
@@ -444,6 +508,9 @@
     initAnchors();
     initVideo();
     initCaseToc();
+    initMailGuard();
+    initWxCopy();
+    initHeroVideo();
     initMisc();
     onScroll();
 

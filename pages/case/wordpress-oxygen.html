@@ -3,10 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>案例详解 · 企业官网从 0 到 1 重构 | 朱本</title>
+<title>案例详解 · 企业官网从 0 到 1 重构 | benzhujohn</title>
 <meta name="description" content="案例详解：用 WordPress + Oxygen Builder 把结构混乱的企业官网重建为模板化体系，让后续每一次修改都不必推倒重来。">
 <meta name="theme-color" content="#0B0B0C">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230B0B0C'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23D8452A'/%3E%3C/svg%3E">
+<link rel="icon" href="../../assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/icon-16.png">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" media="print" onload="this.media='all'"
@@ -20,7 +23,7 @@
 <header class="nav">
   <div class="nav__inner">
     <a class="nav__brand" href="../../index.html" aria-label="回到首页">
-      <span class="nav__mark">朱</span>
+      <span class="nav__mark">B</span>
       <span>PORTFOLIO<span style="opacity:.45"> / 2026</span></span>
     </a>
     <nav class="nav__links" aria-label="主导航">
@@ -46,7 +49,7 @@
   </nav>
   <div class="menu__foot">
     <span>基于 GitHub Pages 托管</span>
-    <a href="mailto:hello@example.com">hello@example.com</a>
+    <a class="mail-guard" data-mail="YmVuemh1am9obkBmb3htYWlsLmNvbQ==" href="../../index.html#contact"><noscript>benzhujohn —at— foxmail —dot— com</noscript></a>
   </div>
 </div>
 
@@ -97,7 +100,7 @@
       <dl class="cfacts reveal">
         <div>
           <dt>客户 / Client</dt>
-          <dd>公司名称占位 —— 制造业企业官网</dd>
+          <dd>储能新能源企业主官网（genixgreen.com）</dd>
         </div>
         <div>
           <dt>我的角色 / Role</dt>
@@ -105,7 +108,7 @@
         </div>
         <div>
           <dt>周期 / Duration</dt>
-          <dd>◯◯ 周（含内容迁移与验收）</dd>
+          <dd>8 个月（含域名收回、内容迁移与上线）</dd>
         </div>
         <div>
           <dt>交付 / Deliverable</dt>
@@ -194,7 +197,7 @@
               <li>
                 <div>
                   <b>内容盘点与信息架构</b>
-                  <span>把旧站所有页面拉成一张表，按业务价值重新分层。砍掉 ◯◯ 个僵尸页面，
+                  <span>把旧站所有页面拉成一张表，按业务价值重新分层。把僵尸页面与重复内容清出索引，
                         把原来散在五个一级菜单下的内容收敛成三大块。</span>
                 </div>
               </li>
@@ -289,9 +292,9 @@
             </div>
             <p>以下数字待替换为真实数据。</p>
             <div class="cs-res">
-              <div><b><span data-count="80" data-dec="0">0</span><i>%</i></b><p>新增栏目页的耗时下降幅度（◯◯ 待填）</p></div>
-              <div><b><span data-count="3.2" data-dec="1">0</span><i>×</i></b><p>自然流量增长倍数（◯◯ 待填）</p></div>
-              <div><b><span data-count="42" data-dec="0">0</span><i>%</i></b><p>首屏加载时间下降幅度（◯◯ 待填）</p></div>
+              <div><b><span data-count="2" data-dec="1">0</span><i>×</i></b><p>主官网自然流量同比翻倍（点击 1.41 万 → 4.63 万）</p></div>
+              <div><b><span data-count="254" data-dec="0">0</span><i>万</i></b><p>年度自然搜索曝光（2024，上年 73 万）</p></div>
+              <div><b><span data-count="14" data-dec="0">0</span><i>+</i></b><p>同体系官网 / 独立站完成搭建或迁移</p></div>
             </div>
           </article>
 
@@ -345,13 +348,18 @@
       </div>
     </div>
 
-    <div class="foot__mailrow">
-      <a class="foot__mail" href="mailto:hello@example.com">hello@example.com</a>
+    <div class="foot__mailrow foot__contacts">
+      <a class="foot__mail mail-guard" href="../../index.html#contact" data-mail="YmVuemh1am9obkBmb3htYWlsLmNvbQ==" aria-label="发送邮件"><noscript>benzhujohn —at— foxmail —dot— com</noscript></a>
+      <button class="foot__mail foot__wx" type="button" data-copywx="13892981183" aria-label="复制微信号 13892981183">
+        <span class="foot__wx__label">WeChat / 微信</span>
+        <b class="foot__wx__num">13892981183</b>
+        <em class="foot__wx__hint" aria-hidden="true">点击复制<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></em>
+      </button>
     </div>
 
     <div class="foot__bottom">
       <a href="../web.html">← 返回网站建站</a>
-      <span>© <span data-year>2026</span> 朱本</span>
+      <span>© <span data-year>2026</span> benzhujohn</span>
       <a href="#">回到顶部 ↑</a>
     </div>
   </div>

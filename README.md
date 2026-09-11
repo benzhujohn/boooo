@@ -1,4 +1,4 @@
-# PORTFOLIO — 朱本
+# PORTFOLIO — benzhujohn
 
 个人作品集网站。纯静态（HTML / CSS / 原生 JS），无构建步骤，直接部署在 GitHub Pages。
 
@@ -98,8 +98,9 @@
 
 | 搜索 | 说明 |
 |------|------|
-| `朱本` | 姓名 |
-| `hello@example.com` | 邮箱（出现多处，含导航菜单和页脚） |
+| `benzhujohn` | 站点署名（姓名不出现真实姓名） |
+| `YmVuemh1am9obkBmb3htYWlsLmNvbQ==` | 邮箱 base64（main.js 里 initMailGuard 解码，防爬虫抓取） |
+| `13892981183` | 微信号（页脚，点击复制） |
 | `公司名称占位` | 履历里的公司名 |
 | `◯◯ 待填` | 需要补真实数据的结果指标 |
 | `benzhujohn` | GitHub 链接 |

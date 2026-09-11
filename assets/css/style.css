@@ -1456,3 +1456,91 @@ figure.cs-fig figcaption {
 }
 .tplbar b { color: var(--fg); font-weight: 500; }
 
+
+/* ============================================================
+   28. Contact footer（邮箱反爬 + 微信复制）
+   ============================================================ */
+.foot__contacts {
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: clamp(10px, 1.6vw, 18px);
+}
+/* 微信行：与巨型邮箱链接同列但小一档，保持编辑式层级 */
+.foot__wx {
+  appearance: none; background: none; border: 0; padding: 0;
+  cursor: pointer; text-align: left; color: var(--fg);
+  font-family: inherit; line-height: 1.1;
+  display: inline-flex; align-items: baseline; gap: .55em;
+  font-size: clamp(1rem, 2.4vw, 1.6rem);
+  letter-spacing: -.01em; font-weight: 500;
+  position: relative;
+}
+.foot__wx__label {
+  font-family: var(--font-mono); font-size: .625rem;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--muted); font-weight: 400;
+  transform: translateY(-.15em);
+}
+.foot__wx__num {
+  font-weight: 500; letter-spacing: .02em;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px dashed color-mix(in srgb, var(--fg) 35%, transparent);
+  padding-bottom: .08em;
+}
+.foot__wx:hover .foot__wx__num { color: var(--accent); border-bottom-color: currentColor; }
+.foot__wx__hint {
+  font-style: normal; font-family: var(--font-mono);
+  font-size: .5625rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex; align-items: center; gap: .4em;
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.foot__wx__hint svg { width: .9em; height: .9em; }
+.foot__wx .foot__wx__hint::after {
+  content: "已复制 ✓"; position: absolute; left: 0; top: 100%;
+  font-size: .625rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--accent); white-space: nowrap;
+  opacity: 0; transform: translateY(-2px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.foot__wx.is-copied .foot__wx__hint::after { opacity: 1; transform: translateY(2px); }
+.foot__wx.is-copied .foot__wx__hint { opacity: 0; transform: translateX(4px); }
+/* JS 可用时才显示提示；无 JS 时按钮仍能展示号码本身 */
+.foot__wx__hint { display: none; }
+.js .foot__wx__hint { display: inline-flex; }
+
+/* ============================================================
+   29. Hero video background（首页首屏视频背景）
+   ============================================================ */
+.hero__video {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; pointer-events: none;
+  opacity: .16;                                   /* 低透明度：只当纹理，不抢文字 */
+  filter: grayscale(.6) contrast(1.04) brightness(.82);
+}
+.hero__shade {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(180deg,
+      rgba(11,11,12,.62) 0%,
+      rgba(11,11,12,.30) 42%,
+      rgba(11,11,12,.55) 74%,
+      rgba(11,11,12,.88) 100%);
+}
+/* 网格线 / 光晕 / 噪点整体压到视频之上，保持原有层次 */
+.hero__video ~ .hero__grid-lines,
+.hero__video ~ .hero__glow,
+.hero__video ~ .hero__noise { z-index: 2; }
+@media (max-width: 720px) {
+  .hero__video { opacity: .13; }
+  .hero__shade {
+    background:
+      linear-gradient(180deg,
+        rgba(11,11,12,.72) 0%,
+        rgba(11,11,12,.46) 45%,
+        rgba(11,11,12,.9) 100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__video { display: none; }   /* 静态海报兜底 */
+}
