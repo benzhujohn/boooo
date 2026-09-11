@@ -439,35 +439,7 @@
     });
   }
 
-  /* ---------- 14. 微信一键复制 ---------- */
-  function initWxCopy() {
-    [].slice.call(doc.querySelectorAll('[data-copywx]')).forEach(function (btn) {
-      if (btn.dataset.wxInit) return;
-      btn.dataset.wxInit = '1';
-      btn.addEventListener('click', function () {
-        var wx = btn.getAttribute('data-copywx');
-        function done() {
-          btn.classList.add('is-copied');
-          clearTimeout(btn._wxT);
-          btn._wxT = setTimeout(function () { btn.classList.remove('is-copied'); }, 1800);
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(wx).then(done, function () { legacy(); });
-        } else { legacy(); }
-        function legacy() {
-          var ta = doc.createElement('textarea');
-          ta.value = wx;
-          ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
-          doc.body.appendChild(ta);
-          ta.select();
-          try { doc.execCommand('copy'); done(); } catch (e) {}
-          ta.parentNode.removeChild(ta);
-        }
-      });
-    });
-  }
-
-  /* ---------- 15. Hero 视频背景（可见才播，省流量） ---------- */
+  /* ---------- 14. Hero 视频背景（可见才播，省流量） ---------- */
   function initHeroVideo() {
     var v = doc.querySelector('.hero__video');
     if (!v || v.dataset.heroInit) return;
@@ -509,7 +481,6 @@
     initVideo();
     initCaseToc();
     initMailGuard();
-    initWxCopy();
     initHeroVideo();
     initMisc();
     onScroll();
