@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- 这是「案例详解页」的空白模板，不要直接对外开放。
+     · noindex 已加，搜索引擎不会收录
+     · 新建案例：复制本文件 → 改名（英文 kebab-case）→ 替换 ◯◯ 与配图
+     · 目录里的 <a href="#s1"> 要和下面 <article id="s1"> 一一对应 -->
+<title>[案例标题] | 朱本</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="[一句话说清这个案例做了什么、结果如何。]">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230B0B0C'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23D8452A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="progress"><div class="progress__bar"></div></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="../../index.html" aria-label="回到首页">
+      <span class="nav__mark">朱</span>
+      <span>PORTFOLIO<span style="opacity:.45"> / 2026</span></span>
+    </a>
+    <nav class="nav__links" aria-label="主导航">
+      <a class="nav__link" href="../../index.html#works">作品板块</a>
+      <a class="nav__link" href="../../index.html#experience">项目经历</a>
+      <a class="nav__link" href="../../index.html#about">关于</a>
+      <a class="nav__link" href="../../index.html#contact">联系</a>
+    </nav>
+    <button class="nav__toggle" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="menu">
+  <nav class="menu__list" aria-label="菜单">
+    <a class="menu__item" href="../../index.html#works"><i>01</i>作品板块</a>
+    <a class="menu__item" href="../web.html"><i>02</i>网站建站</a>
+    <a class="menu__item" href="../graphic.html"><i>03</i>平面设计</a>
+    <a class="menu__item" href="../ai.html"><i>04</i>AI 应用</a>
+    <a class="menu__item" href="../three-d.html"><i>05</i>3D 渲染</a>
+    <a class="menu__item" href="../life.html"><i>06</i>兴趣爱好</a>
+    <a class="menu__item" href="../experience.html"><i>07</i>项目经历</a>
+    <a class="menu__item" href="../../index.html#contact"><i>08</i>联系</a>
+  </nav>
+  <div class="menu__foot">
+    <span>基于 GitHub Pages 托管</span>
+    <a href="mailto:hello@example.com">hello@example.com</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ===== 1. 封面
+       换章节色：ch-web / ch-graphic / ch-ai / ch-d3 / ch-life
+       面包屑第二项指向所属板块页 ===== -->
+  <section class="band band--ink phero ch-web" data-nav="dark">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="phero__glow"></div>
+      <div class="hero__noise"></div>
+    </div>
+    <div class="wrap" style="position:relative;z-index:2">
+      <nav class="crumb reveal" aria-label="面包屑">
+        <a href="../../index.html">首页</a>
+        <span aria-hidden="true">/</span>
+        <a href="../web.html">[板块名]</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">案例详解</span>
+      </nav>
+      <span class="phero__no reveal" style="margin-top:.2em">00</span>
+      <div class="phero__grid">
+        <div class="stack">
+          <span class="t-micro reveal">Case Study · [类型]</span>
+          <h1 class="t-h1 reveal reveal-d1">[案例标题]</h1>
+          <p class="t-lead reveal reveal-d2" style="color:rgba(242,241,237,.72)">
+            用两三句话交代：接手时是什么状况、你判断该做什么、最后落到什么结果。
+          </p>
+        </div>
+        <div class="stack reveal reveal-d3">
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">关键词</span>
+          <ul class="phero__badges">
+            <li class="chip">[工具 / 平台]</li>
+            <li class="chip">[工具 / 平台]</li>
+            <li class="chip">[工具 / 平台]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. 项目概览（四格） ===== -->
+  <section class="band" style="padding-block:clamp(40px,6vw,88px)" data-nav="light">
+    <div class="wrap">
+      <dl class="cfacts reveal">
+        <div><dt>客户 / Client</dt><dd>[◯◯ 待填]</dd></div>
+        <div><dt>我的角色 / Role</dt><dd>[◯◯ 待填]</dd></div>
+        <div><dt>周期 / Duration</dt><dd>[◯◯ 待填]</dd></div>
+        <div><dt>交付 / Deliverable</dt><dd>[◯◯ 待填]</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===== 3. 正文：左目录 + 右内容 ===== -->
+  <section class="band sec" style="padding-top:0" data-nav="light">
+    <div class="wrap">
+      <div class="cbody">
+
+        <aside class="cbody__side reveal">
+          <span class="t-micro">目录 / Contents</span>
+          <nav class="ctoc" aria-label="本页目录">
+            <a href="#s1"><i>01</i><span>背景与问题</span></a>
+            <a href="#s2"><i>02</i><span>目标</span></a>
+            <a href="#s3"><i>03</i><span>做法</span></a>
+            <a href="#s4"><i>04</i><span>拆解逻辑</span></a>
+            <a href="#s5"><i>05</i><span>关键判断</span></a>
+            <a href="#s6"><i>06</i><span>结果</span></a>
+            <a href="#s7"><i>07</i><span>复盘</span></a>
+          </nav>
+          <!-- 正式启用这个案例页时，把下面这块提示条整段删掉 -->
+          <div class="tplbar">
+            <b>模板说明</b>
+            <span>本页是空白骨架。复制成新文件后，
+                  把这段提示条删除，再替换各节内容与配图即可。</span>
+          </div>
+        </aside>
+
+        <div class="cmain">
+
+          <!-- ---- 段落 + 列表 + 旁注 ---- -->
+          <article class="cs-sec reveal" id="s1">
+            <div class="cs-sec__head">
+              <span class="t-num">01</span>
+              <h2>[节标题]</h2>
+            </div>
+            <p>
+              正文段落。用 <strong>strong 标出关键判断</strong>，
+              其余保持陈述语气，不要写形容词堆砌的自我表扬。
+            </p>
+            <ul class="bullets">
+              <li>要点一：具体到数字或具体动作</li>
+              <li>要点二：说清「原来是怎样」</li>
+              <li>要点三：说清「所以代价是什么」</li>
+            </ul>
+            <!-- 旁注：整节只放一句，用来点出这一节真正的洞察 -->
+            <p class="cs-note">
+              一句话洞察，<em>关键处用衬线斜体强调</em>。
+            </p>
+          </article>
+
+          <!-- ---- 编号步骤（适合「我做了什么」） ---- -->
+          <article class="cs-sec reveal" id="s2">
+            <div class="cs-sec__head">
+              <span class="t-num">02</span>
+              <h2>目标</h2>
+            </div>
+            <p>先写目标，再写做法。目标要能被验收，不要写「提升品牌影响力」这种没法对表的话。</p>
+            <ol class="cs-steps">
+              <li>
+                <div>
+                  <b>第一步的标题</b>
+                  <span>具体做了什么、遇到什么约束、怎么绕过去的。</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <b>第二步的标题</b>
+                  <span>同上。步骤控制在 4–7 条，多了就说明没想清楚。</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <b>第三步的标题</b>
+                  <span>同上。</span>
+                </div>
+              </li>
+            </ol>
+          </article>
+
+          <!-- ---- 做法 + 图组 ---- -->
+          <article class="cs-sec reveal" id="s3">
+            <div class="cs-sec__head">
+              <span class="t-num">03</span>
+              <h2>做法</h2>
+            </div>
+            <p>配图跟在做法后面最自然。双图用 <code>cs-figs cs-figs--2</code>，三图用 <code>cs-figs cs-figs--3</code>。</p>
+            <div class="cs-figs cs-figs--2 mt-m">
+              <figure class="cs-fig">
+                <div class="tile tile--wide"><img src="../../assets/img/web-01.svg" alt="[配图说明]"></div>
+                <figcaption><span>[配图说明]</span><span>图 01</span></figcaption>
+              </figure>
+              <figure class="cs-fig">
+                <div class="tile tile--wide"><img src="../../assets/img/web-02.svg" alt="[配图说明]"></div>
+                <figcaption><span>[配图说明]</span><span>图 02</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- ---- 横向流程（适合「拆解逻辑」） ---- -->
+          <article class="cs-sec reveal" id="s4">
+            <div class="cs-sec__head">
+              <span class="t-num">04</span>
+              <h2>拆解逻辑</h2>
+            </div>
+            <div class="cs-flow">
+              <div><b>阶段一</b><p>这一步要解决什么。</p></div>
+              <div><b>阶段二</b><p>这一步要解决什么。</p></div>
+              <div><b>阶段三</b><p>这一步要解决什么。</p></div>
+              <div><b>阶段四</b><p>这一步要解决什么。</p></div>
+            </div>
+          </article>
+
+          <!-- ---- 前后对比 ---- -->
+          <article class="cs-sec reveal" id="s5">
+            <div class="cs-sec__head">
+              <span class="t-num">05</span>
+              <h2>关键判断</h2>
+            </div>
+            <div class="cs-cmp">
+              <div class="is-before">
+                <dt>原先</dt>
+                <ul>
+                  <li>[原来的做法]</li>
+                  <li>[带来的问题]</li>
+                </ul>
+              </div>
+              <div class="is-after">
+                <dt>现在</dt>
+                <ul>
+                  <li>[改成的做法]</li>
+                  <li>[换来的收益]</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---- 成果数据：data-count 会从 0 滚到目标值 ---- -->
+          <article class="cs-sec reveal" id="s6">
+            <div class="cs-sec__head">
+              <span class="t-num">06</span>
+              <h2>结果</h2>
+            </div>
+            <div class="cs-res">
+              <div><b><span data-count="80" data-dec="0">0</span><i>%</i></b><p>[指标说明]</p></div>
+              <div><b><span data-count="3.2" data-dec="1">0</span><i>×</i></b><p>[指标说明]</p></div>
+              <div><b><span data-count="42" data-dec="0">0</span><i>%</i></b><p>[指标说明]</p></div>
+            </div>
+          </article>
+
+          <!-- ---- 复盘 ---- -->
+          <article class="cs-sec reveal" id="s7">
+            <div class="cs-sec__head">
+              <span class="t-num">07</span>
+              <h2>复盘</h2>
+            </div>
+            <p>[这个项目让我改掉了什么习惯、下次会怎么做。]</p>
+            <ul class="bullets">
+              <li>[可迁移的经验]</li>
+              <li>[踩过的坑]</li>
+            </ul>
+          </article>
+
+          <!-- =========================================================
+               可选：在案例里插视频
+               把下面整段外面的注释去掉即可。用法与板块页一致。
+
+               本地文件：data-video="../../assets/video/xxx.mp4"
+               外部嵌入：data-embed="https://player.bilibili.com/player.html?bvid=..."
+                        （B 站 / YouTube / Vimeo 都行，把分享链接里的 embed 地址填进来）
+               封面：    data-poster="../../assets/video/xxx.jpg"
+               标题/副标题：data-vtitle / data-vsub
+
+          <article class="cs-sec reveal" id="s8">
+            <div class="cs-sec__head">
+              <span class="t-num">08</span>
+              <h2>动态演示</h2>
+            </div>
+            <div class="cs-figs cs-figs--2">
+              <div class="work work--video ch-web">
+                <button class="tile tile--wide" type="button"
+                        data-video="../../assets/video/web-scroll.mp4"
+                        data-poster="../../assets/video/web-scroll.jpg"
+                        data-vtitle="页面滚动演示"
+                        data-vsub="响应式 · 全站动效">
+                  <span class="tile__badge">视频</span>
+                  <span class="vdur">00:06</span>
+                  <span class="vplay" aria-hidden="true"><i></i></span>
+                  <img src="../../assets/video/web-scroll.jpg" alt="页面滚动演示封面">
+                  <span class="tile__cap"><span>滚动演示</span><span>Video</span></span>
+                </button>
+                <div class="work__meta"><h3>页面滚动演示</h3><p>Responsive · Motion</p></div>
+              </div>
+            </div>
+          </article>
+          ========================================================= -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. 案例导航 ===== -->
+  <nav class="band cnav" aria-label="案例导航">
+    <a href="[上一个案例.html]">
+      <span class="dir">← 上一个案例</span>
+      <span class="name">[名称]</span>
+    </a>
+    <a class="align-end" href="../web.html">
+      <span class="dir">回到板块 →</span>
+      <span class="name">[板块名]</span>
+    </a>
+  </nav>
+
+</main>
+
+<footer class="band band--ink foot" data-nav="dark">
+  <div class="wrap">
+    <div class="foot__cta">
+      <div class="stack">
+        <span class="t-micro">Contact / 联系</span>
+        <h2 class="t-h1">有活儿，<em class="t-italic">聊两句。</em></h2>
+      </div>
+      <div class="stack-s" style="justify-items:end;text-align:right">
+        <span class="t-micro t-micro--bare" style="color:var(--muted)">长期接受合作与外包</span>
+        <a class="link-arrow" href="https://github.com/benzhujohn">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="foot__mailrow">
+      <a class="foot__mail" href="mailto:hello@example.com">hello@example.com</a>
+    </div>
+
+    <div class="foot__bottom">
+      <a href="../../index.html">← 返回首页</a>
+      <span>© <span data-year>2026</span> 朱本</span>
+      <a href="#">回到顶部 ↑</a>
+    </div>
+  </div>
+  <span class="foot__pagename" aria-hidden="true">CASE</span>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

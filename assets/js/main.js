@@ -238,7 +238,185 @@
     });
   }
 
-  /* ---------- 9. 杂项 ---------- */
+  /* ---------- 10. 视频灯箱（点击播放） ----------
+     标记约定（放在任意元素上）：
+       data-video="assets/video/x.mp4"  → HTML5 播放本地文件
+       data-embed="https://..."         → iframe 嵌入（B站 / YouTube / Vimeo）
+       data-poster="..."  data-vtitle="..."  data-vsub="..."
+     同页有多个时自动出现上一个 / 下一个。 */
+  function initVideo() {
+    var triggers = [].slice.call(doc.querySelectorAll('[data-video], [data-embed]'));
+    if (!triggers.length) return;
+
+    var box = doc.createElement('div');
+    box.className = 'vlight';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', '视频播放');
+    box.innerHTML =
+      '<div class="vlight__top">' +
+        '<div class="vlight__meta">' +
+          '<span class="vlight__title"></span>' +
+          '<span class="vlight__sub"></span>' +
+        '</div>' +
+        '<button class="vlight__x" type="button" aria-label="关闭"><span></span></button>' +
+      '</div>' +
+      '<div class="vlight__stage">' +
+        '<div class="vlight__frame"></div>' +
+        '<div class="vlight__nav">' +
+          '<button class="vlight__prev" type="button" aria-label="上一个">‹</button>' +
+          '<button class="vlight__next" type="button" aria-label="下一个">›</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="vlight__bot">' +
+        '<span class="vlight__hint"><b>ESC</b> 关闭 · <b>空格</b> 播放 / 暂停 · <b>← →</b> 切换</span>' +
+        '<span class="vlight__count"></span>' +
+      '</div>';
+
+    var frame   = box.querySelector('.vlight__frame');
+    var elTitle = box.querySelector('.vlight__title');
+    var elSub   = box.querySelector('.vlight__sub');
+    var elCount = box.querySelector('.vlight__count');
+    var btnX    = box.querySelector('.vlight__x');
+    var btnPrev = box.querySelector('.vlight__prev');
+    var btnNext = box.querySelector('.vlight__next');
+    doc.body.appendChild(box);
+
+    var media = null;      // 当前的 <video> 或 <iframe>
+    var index = 0;
+    var lastFocus = null;
+    var idleTimer = null;
+
+    function clearMedia() {
+      if (media) {
+        try { if (media.pause) media.pause(); } catch (e) {}
+        media.removeAttribute('src');
+        media.innerHTML = '';
+        if (media.load) { try { media.load(); } catch (e) {} }
+      }
+      frame.innerHTML = '';
+      media = null;
+    }
+
+    function buildMedia(trigger) {
+      clearMedia();
+      var file  = trigger.getAttribute('data-video');
+      var embed = trigger.getAttribute('data-embed');
+
+      if (embed) {
+        media = doc.createElement('iframe');
+        media.setAttribute('src', embed);
+        media.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen');
+        media.setAttribute('allowfullscreen', '');
+        media.setAttribute('loading', 'lazy');
+        media.setAttribute('title', trigger.getAttribute('data-vtitle') || '视频');
+        frame.appendChild(media);
+        return;
+      }
+
+      media = doc.createElement('video');
+      media.setAttribute('src', file);
+      media.setAttribute('controls', '');
+      media.setAttribute('playsinline', '');
+      media.setAttribute('preload', 'metadata');
+      var poster = trigger.getAttribute('data-poster');
+      if (poster) media.setAttribute('poster', poster);
+      frame.appendChild(media);
+      var pr = media.play();
+      if (pr && pr.catch) pr.catch(function () { /* 浏览器拦截自动播放时，显示封面等用户点播放 */ });
+    }
+
+    function armIdle() {
+      box.classList.remove('is-idle');
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(function () {
+        if (box.classList.contains('is-open') && media && media.tagName === 'VIDEO' && !media.paused) {
+          box.classList.add('is-idle');
+        }
+      }, 2800);
+    }
+
+    function show(i) {
+      index = (i + triggers.length) % triggers.length;
+      var trig = triggers[index];
+      elTitle.textContent = trig.getAttribute('data-vtitle') || '视频案例';
+      elSub.textContent   = trig.getAttribute('data-vsub') || '';
+      elCount.textContent = triggers.length > 1
+        ? ('0' + (index + 1)).slice(-2) + ' / ' + ('0' + triggers.length).slice(-2)
+        : '';
+      btnPrev.hidden = btnNext.hidden = triggers.length < 2;
+      buildMedia(trig);
+      armIdle();
+    }
+
+    function open(i) {
+      lastFocus = doc.activeElement;
+      show(i);
+      box.classList.add('is-open');
+      root.classList.add('is-locked');
+      btnX.focus({ preventScroll: true });
+    }
+
+    function close() {
+      box.classList.remove('is-open', 'is-idle');
+      root.classList.remove('is-locked');
+      clearTimeout(idleTimer);
+      clearMedia();
+      if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    }
+
+    function isOpen() { return box.classList.contains('is-open'); }
+
+    triggers.forEach(function (trig, i) {
+      trig.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(i);
+      });
+    });
+
+    btnX.addEventListener('click', close);
+    btnPrev.addEventListener('click', function () { show(index - 1); });
+    btnNext.addEventListener('click', function () { show(index + 1); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    box.addEventListener('mousemove', armIdle);
+    box.addEventListener('touchstart', armIdle, { passive: true });
+
+    doc.addEventListener('keydown', function (e) {
+      if (!isOpen()) return;
+      if (e.key === 'Escape') { e.preventDefault(); close(); }
+      else if (e.key === 'ArrowLeft'  && triggers.length > 1) { show(index - 1); }
+      else if (e.key === 'ArrowRight' && triggers.length > 1) { show(index + 1); }
+      else if (e.key === ' ' && media && media.tagName === 'VIDEO') {
+        e.preventDefault();
+        if (media.paused) media.play(); else media.pause();
+      }
+      armIdle();
+    });
+  }
+
+  /* ---------- 11. 案例页目录高亮（滚动到哪一节） ---------- */
+  function initCaseToc() {
+    var links = [].slice.call(doc.querySelectorAll('.ctoc a[href^="#"]'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var map = {};
+    links.forEach(function (a) {
+      var t = doc.querySelector(a.getAttribute('href'));
+      if (t) map[t.id] = a;
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var a = map[en.target.id];
+        if (!a) return;
+        if (en.isIntersecting) {
+          links.forEach(function (x) { x.style.color = ''; });
+          a.style.color = 'var(--fg)';
+        }
+      });
+    }, { rootMargin: '-96px 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) { io.observe(doc.getElementById(id)); });
+  }
+
+  /* ---------- 12. 杂项 ---------- */
   function initMisc() {
     var y = doc.querySelector('[data-year]');
     if (y) y.textContent = new Date().getFullYear();
@@ -264,6 +442,8 @@
     initCounters();
     initFilters();
     initAnchors();
+    initVideo();
+    initCaseToc();
     initMisc();
     onScroll();
 

@@ -137,6 +137,63 @@
     </div>
   </section>
 
+  <!-- 视频案例（点击播放） -->
+  <section class="band band--deep sec" data-nav="light">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div class="shead__row">
+          <span class="t-micro">动态演示 / Motion</span>
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">点击播放</span>
+        </div>
+        <h2 class="t-h2 shead__title mt-s">
+          静帧看不出运动，<em class="t-italic">就交给镜头。</em>
+        </h2>
+        <p class="t-body shead__desc">
+          转台、布光、材质反射——这些东西一张图说不清。点开直接看。
+          换成自己的渲染输出时，把文件放进 <code>assets/video/</code>，改一下路径就行。
+        </p>
+      </div>
+
+      <div class="grid-2 mt-l">
+        <div class="work work--video ch-d3 reveal">
+          <button class="tile tile--wide" type="button"
+                  data-video="../assets/video/d3-turntable.mp4"
+                  data-poster="../assets/video/d3-turntable.jpg"
+                  data-vtitle="产品转台动画"
+                  data-vsub="Blender · Cycles · 360° 旋转">
+            <span class="tile__badge">视频</span>
+            <span class="vdur">00:06</span>
+            <span class="vplay" aria-hidden="true"><i></i></span>
+            <img src="../assets/video/d3-turntable.jpg" alt="产品转台动画封面">
+            <span class="tile__cap"><span>转台动画</span><span>360°</span></span>
+          </button>
+          <div class="work__meta"><h3>产品转台动画</h3><p>建模 · 材质 · 渲染输出</p></div>
+        </div>
+
+        <div class="work work--video ch-d3 reveal reveal-d1">
+          <button class="tile tile--wide" type="button"
+                  data-video="../assets/video/d3-lighting.mp4"
+                  data-poster="../assets/video/d3-lighting.jpg"
+                  data-vtitle="布光演示"
+                  data-vsub="Blender · Key / Fill / Rim + HDRI">
+            <span class="tile__badge">视频</span>
+            <span class="vdur">00:06</span>
+            <span class="vplay" aria-hidden="true"><i></i></span>
+            <img src="../assets/video/d3-lighting.jpg" alt="布光演示封面">
+            <span class="tile__cap"><span>布光演示</span><span>Lighting</span></span>
+          </button>
+          <div class="work__meta"><h3>布光演示</h3><p>Key / Fill / Rim · HDRI</p></div>
+        </div>
+      </div>
+
+      <div class="vrow mt-m">
+        <span>本地文件 <b>assets/video/*.mp4</b></span>
+        <span>封面 <b>assets/video/*.jpg</b></span>
+        <span>也支持 <b>B 站 / YouTube / Vimeo 嵌入</b></span>
+      </div>
+    </div>
+  </section>
+
   <section class="band band--deep sec" data-nav="light">
     <div class="wrap">
       <div class="shead reveal">
@@ -161,6 +218,11 @@
               <div><dt>关键动作</dt><dd>尺寸比例还原 · 程序化材质 · 三点布光 · 多角度输出</dd></div>
               <div><dt>结果</dt><dd>◯◯ 待填 —— 例如：提案通过率提升 / 打样次数减少</dd></div>
             </div>
+            <!-- 3D 的案例详解页还没建。建好之后把下面这行放开，改成本页对应的文件名：
+            <a class="link-arrow" href="case/three-d-xxx.html">
+              查看完整案例详解 <span aria-hidden="true">↗</span>
+            </a>
+            -->
           </div>
           <div class="case__media reveal reveal-d1">
             <div class="tile tile--wide"><img src="../assets/img/d3-01.svg" alt="产品渲染主图"></div>
