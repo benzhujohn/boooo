@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>朱本 · 作品集 | Web · Graphic · AI · 3D · Life</title>
+
+<meta name="description" content="朱本的个人作品集：网站建站（WordPress）、平面设计（Photoshop / Illustrator）、AI 应用（WorkBuddy / ComfyUI / Liblib）、Blender 3D 渲染，以及电脑 DIY 与 NAS 折腾记录。">
+<meta name="author" content="朱本">
+<meta name="theme-color" content="#0B0B0C">
+
+<link rel="canonical" href="https://benzhujohn.github.io/boooo/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="朱本 · 作品集">
+<meta property="og:description" content="把想法做成看得见的东西。网站建站 / 平面设计 / AI 应用 / 3D 渲染 / 生活折腾。">
+<meta property="og:image" content="assets/img/og-cover.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230B0B0C'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23D8452A'/%3E%3C/svg%3E">
+
+<!-- 字体：异步加载，网络不可达时自动回退到系统字体，不阻塞渲染 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 阅读进度 -->
+<div class="progress"><div class="progress__bar"></div></div>
+
+<!-- ============ 导航 ============ -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="回到首页">
+      <span class="nav__mark">朱</span>
+      <span>PORTFOLIO<span style="opacity:.45"> / 2026</span></span>
+    </a>
+    <nav class="nav__links" aria-label="主导航">
+      <a class="nav__link" href="#works">作品板块</a>
+      <a class="nav__link" href="#experience">项目经历</a>
+      <a class="nav__link" href="#about">关于</a>
+      <a class="nav__link" href="#contact">联系</a>
+    </nav>
+    <button class="nav__toggle" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<!-- 全屏菜单（移动端） -->
+<div class="menu">
+  <nav class="menu__list" aria-label="菜单">
+    <a class="menu__item" href="#works"><i>01</i>作品板块</a>
+    <a class="menu__item" href="#c-web"><i>02</i>网站建站</a>
+    <a class="menu__item" href="#c-graphic"><i>03</i>平面设计</a>
+    <a class="menu__item" href="#c-ai"><i>04</i>AI 应用</a>
+    <a class="menu__item" href="#c-d3"><i>05</i>3D 渲染</a>
+    <a class="menu__item" href="#c-life"><i>06</i>兴趣爱好</a>
+    <a class="menu__item" href="#experience"><i>07</i>项目经历</a>
+    <a class="menu__item" href="#contact"><i>08</i>联系</a>
+  </nav>
+  <div class="menu__foot">
+    <span>基于 GitHub Pages 托管</span>
+    <a href="mailto:hello@example.com">hello@example.com</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="band band--ink hero" data-nav="dark">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="hero__glow"></div>
+      <div class="hero__noise"></div>
+    </div>
+
+    <div class="wrap hero__inner">
+      <div class="hero__top">
+        <span class="t-micro">Portfolio — 2026</span>
+        <span class="t-micro t-micro--bare" style="color:rgba(242,241,237,.5)">Based in China · Available for work</span>
+      </div>
+
+      <h1 class="t-display hero__title">
+        <span class="line"><span>I design,</span></span>
+        <span class="line"><span>I build,</span></span>
+        <span class="line"><span><em>I ship.</em></span></span>
+      </h1>
+
+      <div class="hero__meta">
+        <p class="t-lead" style="color:rgba(242,241,237,.72)">
+          我是<strong style="color:#F2F1ED">朱本</strong>。做网站、做平面、用 AI 提效、用 Blender 建模。
+          也折腾 NAS 和机箱——喜欢把混乱的东西，整理成有秩序的系统。
+        </p>
+        <ul class="hero__roles">
+          <li class="chip">网站建站</li>
+          <li class="chip">平面设计</li>
+          <li class="chip">AI 应用</li>
+          <li class="chip">3D 渲染</li>
+          <li class="chip">生活折腾</li>
+        </ul>
+        <span class="hero__scroll">Scroll <i></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 走马灯 ============ -->
+  <div class="band band--ink marquee" data-nav="dark" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">WordPress</span>
+      <span class="marquee__item">Oxygen Builder</span>
+      <span class="marquee__item">WooCommerce</span>
+      <span class="marquee__item">Photoshop</span>
+      <span class="marquee__item">Illustrator</span>
+      <span class="marquee__item">WorkBuddy</span>
+      <span class="marquee__item">ComfyUI</span>
+      <span class="marquee__item">Liblib</span>
+      <span class="marquee__item">Blender</span>
+      <span class="marquee__item">NAS</span>
+      <span class="marquee__item">PC DIY</span>
+    </div>
+    <div class="marquee__track">
+      <span class="marquee__item">WordPress</span>
+      <span class="marquee__item">Oxygen Builder</span>
+      <span class="marquee__item">WooCommerce</span>
+      <span class="marquee__item">Photoshop</span>
+      <span class="marquee__item">Illustrator</span>
+      <span class="marquee__item">WorkBuddy</span>
+      <span class="marquee__item">ComfyUI</span>
+      <span class="marquee__item">Liblib</span>
+      <span class="marquee__item">Blender</span>
+      <span class="marquee__item">NAS</span>
+      <span class="marquee__item">PC DIY</span>
+    </div>
+  </div>
+
+  <!-- ============ 自我介绍 ============ -->
+  <section class="band sec" id="about" data-nav="light">
+    <div class="wrap">
+      <div class="split">
+        <div class="col-a">
+          <span class="t-micro reveal">关于我 / About</span>
+        </div>
+        <div class="col-b stack">
+          <p class="quote reveal reveal-d1">
+            一个人做完<em>从想法到上线</em>的整条链路——这样最不容易走样。
+          </p>
+          <p class="t-body reveal reveal-d2">
+            我把工作分成四条线：<strong>网站</strong>负责把东西放到线上，<strong>平面</strong>负责让它看起来对，
+            <strong>AI</strong> 负责把重复的事压缩掉，<strong>Blender</strong> 负责在动手之前先看见它。
+            剩下的精力交给第五件事——<strong>折腾</strong>。机箱、NAS、新工具，看见就想拆开看个究竟。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3 mt-l">
+        <div class="hairline-top reveal">
+          <span class="t-num">01 — Full-stack of visual</span>
+          <h3 class="t-h3 mt-s">从像素到上线</h3>
+          <p class="t-body mt-s" style="font-size:var(--fs-small)">设计稿、印刷文件、前端模板、SEO 配置，不需要在多个角色之间来回传话。</p>
+        </div>
+        <div class="hairline-top reveal reveal-d1">
+          <span class="t-num">02 — AI as a tool</span>
+          <h3 class="t-h3 mt-s">把 AI 当工具，不当答案</h3>
+          <p class="t-body mt-s" style="font-size:var(--fs-small)">用工作流把重复劳动吃掉，把判断力留给需要判断的地方。</p>
+        </div>
+        <div class="hairline-top reveal reveal-d2">
+          <span class="t-num">03 — Systems over hacks</span>
+          <h3 class="t-h3 mt-s">喜欢系统，不喜欢补丁</h3>
+          <p class="t-body mt-s" style="font-size:var(--fs-small)">模板化、可维护、有秩序。能一次做对的事，不做第二次。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 目录（悬停预览） ============ -->
+  <section class="band sec" id="works" data-nav="light">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div class="shead__row">
+          <span class="t-micro">作品板块 / Index</span>
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">05 Chapters · 把光标移上去看看</span>
+        </div>
+        <h2 class="t-h1 shead__title">五个板块，<br>一条做事的逻辑。</h2>
+      </div>
+
+      <div class="idx mt-l">
+        <a class="idx__row reveal" href="pages/web.html" data-peek="assets/img/hero-web.svg"
+           style="--row-accent:var(--ch-web)">
+          <span class="idx__num">01</span>
+          <span class="idx__name">网站建站 <small>Web Development</small></span>
+          <span class="idx__tags"><span>WordPress</span><span>Oxygen</span><span>SEO</span></span>
+          <span class="idx__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="idx__row reveal" href="pages/graphic.html" data-peek="assets/img/hero-graphic.svg"
+           style="--row-accent:var(--ch-graphic)">
+          <span class="idx__num">02</span>
+          <span class="idx__name">平面设计 <small>Graphic Design</small></span>
+          <span class="idx__tags"><span>说明书</span><span>UI</span><span>标贴</span><span>易拉宝</span></span>
+          <span class="idx__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="idx__row reveal" href="pages/ai.html" data-peek="assets/img/hero-ai.svg"
+           style="--row-accent:var(--ch-ai)">
+          <span class="idx__num">03</span>
+          <span class="idx__name">AI 应用 <small>AI Workflow</small></span>
+          <span class="idx__tags"><span>WorkBuddy</span><span>ComfyUI</span><span>Liblib</span></span>
+          <span class="idx__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="idx__row reveal" href="pages/three-d.html" data-peek="assets/img/hero-d3.svg"
+           style="--row-accent:var(--ch-d3)">
+          <span class="idx__num">04</span>
+          <span class="idx__name">3D 渲染 <small>Blender</small></span>
+          <span class="idx__tags"><span>建模</span><span>材质</span><span>灯光</span><span>渲染</span></span>
+          <span class="idx__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="idx__row reveal" href="pages/life.html" data-peek="assets/img/hero-life.svg"
+           style="--row-accent:var(--ch-life)">
+          <span class="idx__num">05</span>
+          <span class="idx__name">兴趣爱好 <small>Beyond Work</small></span>
+          <span class="idx__tags"><span>电脑DIY</span><span>NAS</span><span>健身</span><span>INFJ</span></span>
+          <span class="idx__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 网站建站 ============ -->
+  <section class="band band--deep sec chapter ch-web" id="c-web" data-nav="light">
+    <div class="wrap">
+      <span class="chapter__no" aria-hidden="true">01</span>
+
+      <div class="chapter__head">
+        <div>
+          <div class="chapter__kicker">
+            <b>Chapter 01</b>
+            <span class="t-micro t-micro--bare" style="color:var(--muted)">Web Development</span>
+          </div>
+          <h2 class="t-h1 reveal">网站建站</h2>
+        </div>
+        <div class="stack-s reveal reveal-d1">
+          <p class="t-body">
+            以 <strong>WordPress</strong> 为主力栈，从信息架构、模板体系到 SEO 与性能优化全程落地。
+            擅长在受限的服务器环境里，把站点做得干净、可维护、有秩序——而不是靠插件堆出来。
+          </p>
+          <a class="link-arrow mt-s" href="pages/web.html">查看作品集 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <a class="work reveal" href="pages/web.html">
+          <div class="tile tile--wide" style="aspect-ratio:4/5">
+            <span class="tile__badge">WordPress</span>
+            <img src="assets/img/web-01.svg" alt="企业官网界面设计">
+            <span class="tile__cap"><span>企业官网</span><span>2025</span></span>
+          </div>
+          <div class="work__meta"><h3>企业官网重构</h3><p>模板体系 · SEO</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="pages/web.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">WooCommerce</span>
+            <img src="assets/img/web-02.svg" alt="电商站点设计">
+            <span class="tile__cap"><span>独立站电商</span><span>2025</span></span>
+          </div>
+          <div class="work__meta"><h3>独立站商城</h3><p>商品体系 · 转化</p></div>
+        </a>
+        <a class="work reveal reveal-d2" href="pages/web.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">SEO</span>
+            <img src="assets/img/web-03.svg" alt="内容站结构规划">
+            <span class="tile__cap"><span>内容站结构</span><span>2026</span></span>
+          </div>
+          <div class="work__meta"><h3>内容站规划</h3><p>关键词 · URL 结构</p></div>
+        </a>
+        <a class="work reveal reveal-d3" href="pages/web.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">Automation</span>
+            <img src="assets/img/web-04.svg" alt="自动化发布流程">
+            <span class="tile__cap"><span>自动化流程</span><span>2026</span></span>
+          </div>
+          <div class="work__meta"><h3>自动化发布</h3><p>定时任务 · 内容流水线</p></div>
+        </a>
+      </div>
+
+      <div class="split mt-l">
+        <div class="col-a"><span class="t-micro reveal">能力 / Capabilities</span></div>
+        <div class="col-b">
+          <ul class="caps reveal">
+            <li><b>平台</b><span>WordPress · WooCommerce · Oxygen Builder · 主题与模板架构</span></li>
+            <li><b>前端</b><span>HTML / CSS · 响应式布局 · 交互动效实现 · 移动端细节打磨</span></li>
+            <li><b>SEO</b><span>关键词规划 · URL 结构 · Meta 与结构化数据 · The SEO Framework · 内容查重体系</span></li>
+            <li><b>性能运维</b><span>缓存策略 · 图片优化 · 内存与资源调优 · 自动化发布流程</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 平面设计 ============ -->
+  <section class="band sec chapter ch-graphic" id="c-graphic" data-nav="light">
+    <div class="wrap">
+      <span class="chapter__no" aria-hidden="true">02</span>
+
+      <div class="chapter__head">
+        <div>
+          <div class="chapter__kicker">
+            <b>Chapter 02</b>
+            <span class="t-micro t-micro--bare" style="color:var(--muted)">Graphic Design</span>
+          </div>
+          <h2 class="t-h1 reveal">平面设计</h2>
+        </div>
+        <div class="stack-s reveal reveal-d1">
+          <p class="t-body">
+            <strong>Photoshop</strong> 与 <strong>Illustrator</strong> 双主力。说明书、UI、产品物料、标贴、易拉宝——
+            从概念到印刷落地一手包办，注重视觉语言的一致性和信息层级的清晰。
+          </p>
+          <a class="link-arrow mt-s" href="pages/graphic.html">查看作品集 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <a class="work reveal" href="pages/graphic.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">说明书</span>
+            <img src="assets/img/graphic-01.svg" alt="产品说明书版式设计">
+            <span class="tile__cap"><span>产品说明书</span><span>印刷物料</span></span>
+          </div>
+          <div class="work__meta"><h3>说明书体系</h3><p>Illustrator · InDesign</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="pages/graphic.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">UI</span>
+            <img src="assets/img/graphic-02.svg" alt="界面 UI 设计">
+            <span class="tile__cap"><span>界面设计</span><span>组件规范</span></span>
+          </div>
+          <div class="work__meta"><h3>界面与组件</h3><p>UI Kit · 图标</p></div>
+        </a>
+        <a class="work reveal reveal-d2" href="pages/graphic.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">标贴</span>
+            <img src="assets/img/graphic-03.svg" alt="产品标贴设计">
+            <span class="tile__cap"><span>标贴 / 包装</span><span>产品线延展</span></span>
+          </div>
+          <div class="work__meta"><h3>标贴与包装</h3><p>Packaging</p></div>
+        </a>
+        <a class="work reveal" href="pages/graphic.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">易拉宝</span>
+            <img src="assets/img/graphic-04.svg" alt="易拉宝展架设计">
+            <span class="tile__cap"><span>展架物料</span><span>线下曝光</span></span>
+          </div>
+          <div class="work__meta"><h3>易拉宝 / 展架</h3><p>Roll-up Banner</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="pages/graphic.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">字体排版</span>
+            <img src="assets/img/graphic-05.svg" alt="字体与版面构成">
+            <span class="tile__cap"><span>版面与字体</span><span>Editorial</span></span>
+          </div>
+          <div class="work__meta"><h3>版面构成</h3><p>Typography</p></div>
+        </a>
+        <a class="work reveal reveal-d2" href="pages/graphic.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">物料体系</span>
+            <img src="assets/img/graphic-06.svg" alt="产品物料系统">
+            <span class="tile__cap"><span>物料系统</span><span>品牌一致性</span></span>
+          </div>
+          <div class="work__meta"><h3>物料体系延展</h3><p>Brand System</p></div>
+        </a>
+      </div>
+
+      <div class="split mt-l">
+        <div class="col-a"><span class="t-micro reveal">能力 / Capabilities</span></div>
+        <div class="col-b">
+          <ul class="caps reveal">
+            <li><b>印刷物料</b><span>说明书 · 折页 · 海报 · 易拉宝 · 出血与工艺对接</span></li>
+            <li><b>品牌视觉</b><span>标贴 · 包装 · 产品线视觉一致性延展</span></li>
+            <li><b>界面设计</b><span>UI 组件库 · 图标系统 · 高保真原型</span></li>
+            <li><b>工具</b><span>Adobe Photoshop · Adobe Illustrator · Adobe InDesign</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 AI 应用 ============ -->
+  <section class="band band--ink sec chapter ch-ai" id="c-ai" data-nav="dark">
+    <div class="wrap">
+      <span class="chapter__no" aria-hidden="true">03</span>
+
+      <div class="chapter__head">
+        <div>
+          <div class="chapter__kicker">
+            <b>Chapter 03</b>
+            <span class="t-micro t-micro--bare" style="color:var(--muted)">AI Workflow</span>
+          </div>
+          <h2 class="t-h1 reveal">AI 应用</h2>
+        </div>
+        <div class="stack-s reveal reveal-d1">
+          <p class="t-body">
+            把 AI 从「玩具」变成「生产力」。用 <strong>WorkBuddy</strong> 编排自动化流程，
+            用 <strong>ComfyUI</strong> 与 <strong>Liblib</strong> 做可控的图像生成与创意探索——
+            重点不是生成，而是<strong>稳定复现</strong>。
+          </p>
+          <a class="link-arrow mt-s" href="pages/ai.html">查看作品集 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <a class="work reveal" href="pages/ai.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">WorkBuddy</span>
+            <img src="assets/img/ai-01.svg" alt="智能体自动化工作流">
+            <span class="tile__cap"><span>自动化工作流</span><span>编排</span></span>
+          </div>
+          <div class="work__meta"><h3>内容自动化</h3><p>定时任务 · 全流程</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="pages/ai.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">ComfyUI</span>
+            <img src="assets/img/ai-02.svg" alt="ComfyUI 节点工作流">
+            <span class="tile__cap"><span>节点工作流</span><span>可控生成</span></span>
+          </div>
+          <div class="work__meta"><h3>ComfyUI 工作流</h3><p>LoRA · ControlNet</p></div>
+        </a>
+        <a class="work reveal reveal-d2" href="pages/ai.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">Liblib</span>
+            <img src="assets/img/ai-03.svg" alt="模型平台创意探索">
+            <span class="tile__cap"><span>创意探索</span><span>模型平台</span></span>
+          </div>
+          <div class="work__meta"><h3>Liblib 模型探索</h3><p>提示词 · 风格控制</p></div>
+        </a>
+        <a class="work reveal reveal-d3" href="pages/ai.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">Efficiency</span>
+            <img src="assets/img/ai-04.svg" alt="效率提升流程">
+            <span class="tile__cap"><span>效率提升</span><span>批处理</span></span>
+          </div>
+          <div class="work__meta"><h3>批量素材生产</h3><p>Pipeline</p></div>
+        </a>
+      </div>
+
+      <div class="split mt-l">
+        <div class="col-a"><span class="t-micro reveal">能力 / Capabilities</span></div>
+        <div class="col-b">
+          <ul class="caps reveal">
+            <li><b>智能体编排</b><span>WorkBuddy 工作流设计 · 定时任务 · 跨工具串联</span></li>
+            <li><b>图像生成</b><span>ComfyUI 节点工作流 · LoRA 训练与应用 · ControlNet 精准控制</span></li>
+            <li><b>模型平台</b><span>Liblib 模型选择 · 提示词工程 · 风格一致性控制</span></li>
+            <li><b>落地场景</b><span>素材批量生产 · 数据处理 · 内容运营自动化 · 设计流程提效</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 3D 渲染 ============ -->
+  <section class="band sec chapter ch-d3" id="c-d3" data-nav="light">
+    <div class="wrap">
+      <span class="chapter__no" aria-hidden="true">04</span>
+
+      <div class="chapter__head">
+        <div>
+          <div class="chapter__kicker">
+            <b>Chapter 04</b>
+            <span class="t-micro t-micro--bare" style="color:var(--muted)">Blender 3D</span>
+          </div>
+          <h2 class="t-h1 reveal">3D 渲染</h2>
+        </div>
+        <div class="stack-s reveal reveal-d1">
+          <p class="t-body">
+            用 <strong>Blender</strong> 走完建模、材质、布光到渲染的完整链路。
+            在动手做实物之前，先把它在画面里做出来——产品展示、场景概念、视觉提案都用得上。
+          </p>
+          <a class="link-arrow mt-s" href="pages/three-d.html">查看作品集 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <a class="work reveal" href="pages/three-d.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">建模</span>
+            <img src="assets/img/d3-01.svg" alt="硬表面建模作品">
+            <span class="tile__cap"><span>硬表面建模</span><span>Blender</span></span>
+          </div>
+          <div class="work__meta"><h3>产品硬表面建模</h3><p>拓扑 · 细节</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="pages/three-d.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">渲染</span>
+            <img src="assets/img/d3-02.svg" alt="Cycles 渲染作品">
+            <span class="tile__cap"><span>光影与材质</span><span>Cycles</span></span>
+          </div>
+          <div class="work__meta"><h3>材质与布光</h3><p>Cycles · HDRI</p></div>
+        </a>
+        <a class="work reveal" href="pages/three-d.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">场景</span>
+            <img src="assets/img/d3-03.svg" alt="场景概念渲染">
+            <span class="tile__cap"><span>场景概念</span><span>氛围</span></span>
+          </div>
+          <div class="work__meta"><h3>场景概念渲染</h3><p>Concept</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="pages/three-d.html">
+          <div class="tile tile--wide">
+            <span class="tile__badge">后期</span>
+            <img src="assets/img/d3-04.svg" alt="渲染后期合成">
+            <span class="tile__cap"><span>后期合成</span><span>Compositing</span></span>
+          </div>
+          <div class="work__meta"><h3>后期与合成</h3><p>Post-processing</p></div>
+        </a>
+      </div>
+
+      <div class="split mt-l">
+        <div class="col-a"><span class="t-micro reveal">能力 / Capabilities</span></div>
+        <div class="col-b">
+          <ul class="caps reveal">
+            <li><b>建模</b><span>硬表面建模 · 拓扑优化 · 修改器与非破坏性流程</span></li>
+            <li><b>材质灯光</b><span>程序化材质 · PBR · 三点布光 · HDRI 环境</span></li>
+            <li><b>渲染</b><span>Cycles / Eevee · 渲染设置与优化 · 后期合成</span></li>
+            <li><b>应用</b><span>产品渲染图 · 场景概念 · 设计提案可视化</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 兴趣爱好 ============ -->
+  <section class="band band--deep sec chapter ch-life" id="c-life" data-nav="light">
+    <div class="wrap">
+      <span class="chapter__no" aria-hidden="true">05</span>
+
+      <div class="chapter__head">
+        <div>
+          <div class="chapter__kicker">
+            <b>Chapter 05</b>
+            <span class="t-micro t-micro--bare" style="color:var(--muted)">Beyond Work</span>
+          </div>
+          <h2 class="t-h1 reveal">兴趣爱好</h2>
+        </div>
+        <div class="stack-s reveal reveal-d1">
+          <p class="t-body">
+            工作之外，我把生活也当成一个可以持续迭代的系统。
+            <strong>电脑 DIY</strong>、<strong>NAS 自建</strong>、见到新东西就想拆开看看，
+            再加规律健身和长期规划——这些才是让上面四个板块跑得动的原因。
+          </p>
+          <a class="link-arrow mt-s" href="pages/life.html">看看我折腾什么 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <a class="work reveal" href="pages/life.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">PC DIY</span>
+            <img src="assets/img/life-01.svg" alt="电脑 DIY 装机">
+            <span class="tile__cap"><span>装机与调优</span><span></span></span>
+          </div>
+          <div class="work__meta"><h3>电脑 DIY</h3><p>配置 · 散热 · 风道</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="pages/life.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">NAS</span>
+            <img src="assets/img/life-02.svg" alt="NAS 自建存储">
+            <span class="tile__cap"><span>存储与备份</span><span></span></span>
+          </div>
+          <div class="work__meta"><h3>NAS 自建</h3><p>阵列 · 备份 · 家庭服务</p></div>
+        </a>
+        <a class="work reveal reveal-d2" href="pages/life.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">Explore</span>
+            <img src="assets/img/life-03.svg" alt="新工具探索">
+            <span class="tile__cap"><span>新东西</span><span></span></span>
+          </div>
+          <div class="work__meta"><h3>新工具探索</h3><p>拆开看个究竟</p></div>
+        </a>
+        <a class="work reveal reveal-d3" href="pages/life.html">
+          <div class="tile" style="aspect-ratio:4/5">
+            <span class="tile__badge">Rhythm</span>
+            <img src="assets/img/life-04.svg" alt="健身与生活规划">
+            <span class="tile__cap"><span>身体与节奏</span><span></span></span>
+          </div>
+          <div class="work__meta"><h3>健身与规划</h3><p>长期主义</p></div>
+        </a>
+      </div>
+
+      <div class="split mt-l">
+        <div class="col-a"><span class="t-micro reveal">折腾清单 / What I tinker with</span></div>
+        <div class="col-b">
+          <ul class="caps reveal">
+            <li><b>电脑 DIY</b><span>装机配置 · 散热与风道设计 · 静音与性能平衡 · 系统调优</span></li>
+            <li><b>NAS 自建</b><span>存储方案选型 · 阵列与冗余 · 异地备份策略 · 家庭服务自托管</span></li>
+            <li><b>新工具</b><span>看到没见过的软件/硬件就想装一遍试试 · 边用边学</span></li>
+            <li><b>身体与节奏</b><span>规律健身 · 长期规划 · INFJ 式的系统化思考</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 项目经历 ============ -->
+  <section class="band sec" id="experience" data-nav="light">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div class="shead__row">
+          <span class="t-micro">项目经历 / Experience</span>
+          <a class="link-arrow" href="pages/experience.html">完整经历与成果 <span aria-hidden="true">→</span></a>
+        </div>
+        <h2 class="t-h1 shead__title">
+          做过什么，<br>以及<em class="t-italic">做成了什么</em>。
+        </h2>
+      </div>
+
+      <div class="stats mt-l reveal">
+        <div class="stat">
+          <b><span data-count="5">5</span></b>
+          <p>作品板块，覆盖从设计到上线的完整链路</p>
+        </div>
+        <div class="stat">
+          <b><span data-count="80">80</span><i>+</i></b>
+          <p>累计上线的页面与设计交付物</p>
+        </div>
+        <div class="stat">
+          <b><span data-count="6">6</span><i>年</i></b>
+          <p>设计与建站的实战经验</p>
+        </div>
+        <div class="stat">
+          <b><span data-count="4">4</span><i>套</i></b>
+          <p>已跑通的 AI 自动化工作流</p>
+        </div>
+      </div>
+
+      <div class="tl mt-l">
+        <article class="tl__item reveal">
+          <div class="tl__when">2024 — 现在</div>
+          <div>
+            <h3 class="tl__role">网站建站 / 视觉设计负责人</h3>
+            <p class="tl__org">公司名称占位 · 全职</p>
+          </div>
+          <div class="tl__note">
+            <ul>
+              <li>主导官网从 0 到 1 重构，建立 WordPress + Oxygen 模板体系</li>
+              <li>搭建每日自动化内容发布流程，把重复劳动压缩掉</li>
+              <li>完成全站 SEO 规范化，统一 URL 结构与 Meta 体系</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl__item reveal">
+          <div class="tl__when">2023 — 2024</div>
+          <div>
+            <h3 class="tl__role">平面设计 / 产品物料</h3>
+            <p class="tl__org">公司名称占位 · 全职</p>
+          </div>
+          <div class="tl__note">
+            <ul>
+              <li>负责说明书、标贴、易拉宝等印刷物料的设计与落地</li>
+              <li>建立产品线视觉规范，保证跨物料的一致性</li>
+              <li>对接印厂完成出血、色彩与工艺确认</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl__item reveal">
+          <div class="tl__when">2022 — 2023</div>
+          <div>
+            <h3 class="tl__role">视觉设计 / 界面与电商</h3>
+            <p class="tl__org">公司名称占位 · 全职</p>
+          </div>
+          <div class="tl__note">
+            <ul>
+              <li>独立站商城的界面设计与商品视觉体系搭建</li>
+              <li>输出 UI 组件与图标规范，提升后续改版效率</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl__item reveal">
+          <div class="tl__when">持续进行</div>
+          <div>
+            <h3 class="tl__role">AI 工作流与 3D 探索</h3>
+            <p class="tl__org">自驱项目</p>
+          </div>
+          <div class="tl__note">
+            <ul>
+              <li>用 WorkBuddy 编排自动化任务，ComfyUI 搭建可控生成流程</li>
+              <li>Blender 完成产品级渲染与场景概念，用于设计提案</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="band band--ink foot" id="contact" data-nav="dark">
+  <div class="wrap">
+    <div class="foot__cta">
+      <div class="stack">
+        <span class="t-micro">Contact / 联系</span>
+        <h2 class="t-h1">有活儿，<em class="t-italic">聊两句。</em></h2>
+      </div>
+      <div class="stack-s" style="justify-items:end;text-align:right">
+        <span class="t-micro t-micro--bare" style="color:var(--muted)">长期接受合作与外包</span>
+        <a class="link-arrow" href="https://github.com/benzhujohn">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="foot__mailrow">
+      <a class="foot__mail" href="mailto:hello@example.com">hello@example.com</a>
+    </div>
+
+    <div class="foot__bottom">
+      <span>© <span data-year>2026</span> 朱本 · 保留所有权利</span>
+      <span>Designed &amp; built by myself</span>
+      <a href="#top">回到顶部 ↑</a>
+    </div>
+  </div>
+  <span class="foot__pagename" aria-hidden="true">PORTFOLIO</span>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

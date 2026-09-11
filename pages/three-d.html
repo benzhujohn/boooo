@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3D 渲染 · 作品集 | 朱本</title>
+<meta name="description" content="Blender 3D 渲染作品集：硬表面建模、程序化材质、布光与 Cycles 渲染，用于产品展示、场景概念与设计提案。">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230B0B0C'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23D8452A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="progress"><div class="progress__bar"></div></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="../index.html" aria-label="回到首页">
+      <span class="nav__mark">朱</span>
+      <span>PORTFOLIO<span style="opacity:.45"> / 2026</span></span>
+    </a>
+    <nav class="nav__links" aria-label="主导航">
+      <a class="nav__link" href="../index.html#works">作品板块</a>
+      <a class="nav__link" href="../index.html#experience">项目经历</a>
+      <a class="nav__link" href="../index.html#about">关于</a>
+      <a class="nav__link" href="../index.html#contact">联系</a>
+    </nav>
+    <button class="nav__toggle" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="menu">
+  <nav class="menu__list" aria-label="菜单">
+    <a class="menu__item" href="../index.html#works"><i>01</i>作品板块</a>
+    <a class="menu__item" href="web.html"><i>02</i>网站建站</a>
+    <a class="menu__item" href="graphic.html"><i>03</i>平面设计</a>
+    <a class="menu__item" href="ai.html"><i>04</i>AI 应用</a>
+    <a class="menu__item" href="three-d.html"><i>05</i>3D 渲染</a>
+    <a class="menu__item" href="life.html"><i>06</i>兴趣爱好</a>
+    <a class="menu__item" href="experience.html"><i>07</i>项目经历</a>
+    <a class="menu__item" href="../index.html#contact"><i>08</i>联系</a>
+  </nav>
+  <div class="menu__foot">
+    <span>基于 GitHub Pages 托管</span>
+    <a href="mailto:hello@example.com">hello@example.com</a>
+  </div>
+</div>
+
+<main>
+
+  <section class="band band--ink phero ch-d3" data-nav="dark">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="phero__glow"></div>
+      <div class="hero__noise"></div>
+    </div>
+    <div class="wrap" style="position:relative;z-index:2">
+      <span class="phero__no reveal">04</span>
+      <div class="phero__grid">
+        <div class="stack">
+          <span class="t-micro reveal">Chapter 04 / Blender 3D</span>
+          <h1 class="t-h1 reveal reveal-d1">3D 渲染</h1>
+          <p class="t-lead reveal reveal-d2" style="color:rgba(242,241,237,.72)">
+            用 Blender 走完建模、材质、布光到渲染的完整链路。
+            在动手做实物之前，先把它在画面里做出来——产品展示、场景概念、视觉提案都用得上。
+          </p>
+        </div>
+        <div class="stack reveal reveal-d3">
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">工具与方向</span>
+          <ul class="phero__badges">
+            <li class="chip">Blender</li>
+            <li class="chip">Cycles</li>
+            <li class="chip">Eevee</li>
+            <li class="chip">Hard-surface</li>
+            <li class="chip">HDRI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band sec" data-nav="light">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div class="shead__row">
+          <span class="t-micro">作品 / Works</span>
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">4 个项目</span>
+        </div>
+      </div>
+
+      <div class="filters mt-m">
+        <button class="is-active" data-filter="all">全部</button>
+        <button data-filter="建模">建模</button>
+        <button data-filter="材质">材质与灯光</button>
+        <button data-filter="场景">场景概念</button>
+        <button data-filter="后期">后期合成</button>
+      </div>
+
+      <div class="grid-2 mt-l">
+        <a class="work reveal" href="#" data-cat="建模">
+          <div class="tile tile--wide">
+            <span class="tile__badge">建模</span>
+            <img src="../assets/img/d3-01.svg" alt="硬表面建模作品">
+            <span class="tile__cap"><span>硬表面建模</span><span>Blender</span></span>
+          </div>
+          <div class="work__meta"><h3>产品硬表面建模</h3><p>拓扑 · 细节雕琢</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="#" data-cat="材质">
+          <div class="tile tile--wide">
+            <span class="tile__badge">渲染</span>
+            <img src="../assets/img/d3-02.svg" alt="Cycles 渲染作品">
+            <span class="tile__cap"><span>材质与布光</span><span>Cycles</span></span>
+          </div>
+          <div class="work__meta"><h3>材质与布光</h3><p>程序化材质 · HDRI</p></div>
+        </a>
+        <a class="work reveal" href="#" data-cat="场景">
+          <div class="tile tile--wide">
+            <span class="tile__badge">场景</span>
+            <img src="../assets/img/d3-03.svg" alt="场景概念渲染">
+            <span class="tile__cap"><span>场景概念</span><span>氛围</span></span>
+          </div>
+          <div class="work__meta"><h3>场景概念渲染</h3><p>Concept · 构图</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="#" data-cat="后期">
+          <div class="tile tile--wide">
+            <span class="tile__badge">后期</span>
+            <img src="../assets/img/d3-04.svg" alt="渲染后期合成">
+            <span class="tile__cap"><span>后期合成</span><span>Compositing</span></span>
+          </div>
+          <div class="work__meta"><h3>后期与合成</h3><p>色彩 · 质感微调</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--deep sec" data-nav="light">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div class="shead__row">
+          <span class="t-micro">精选案例 / Case Study</span>
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">挑两个讲细一点</span>
+        </div>
+      </div>
+
+      <article class="case mt-l">
+        <div class="case__grid">
+          <div class="case__info reveal">
+            <span class="t-num">Case 01</span>
+            <h2 class="t-h2">产品渲染：先看见，再造出来</h2>
+            <p class="t-body">
+              实物还没打样，先用 Blender 把比例、材质和光影定下来。
+              提案阶段能一次说清，比来回改实物便宜太多。
+            </p>
+            <div class="case__specs">
+              <div><dt>角色</dt><dd>建模 · 材质 · 布光 · 渲染</dd></div>
+              <div><dt>工具</dt><dd>Blender · Cycles · Photoshop 后期</dd></div>
+              <div><dt>关键动作</dt><dd>尺寸比例还原 · 程序化材质 · 三点布光 · 多角度输出</dd></div>
+              <div><dt>结果</dt><dd>◯◯ 待填 —— 例如：提案通过率提升 / 打样次数减少</dd></div>
+            </div>
+          </div>
+          <div class="case__media reveal reveal-d1">
+            <div class="tile tile--wide"><img src="../assets/img/d3-01.svg" alt="产品渲染主图"></div>
+            <div class="case__media--2 grid-2">
+              <div class="tile tile--square"><img src="../assets/img/d3-02.svg" alt="材质细节"></div>
+              <div class="tile tile--square"><img src="../assets/img/d3-04.svg" alt="后期合成"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case case--flip">
+        <div class="case__grid">
+          <div class="case__info reveal">
+            <span class="t-num">Case 02</span>
+            <h2 class="t-h2">场景与氛围</h2>
+            <p class="t-body">
+              单个产品放不进故事里，就只是一个零件。
+              加上场景、光线和材质对比，画面才会开始讲话。
+            </p>
+            <div class="case__specs">
+              <div><dt>角色</dt><dd>场景搭建 · 灯光设计</dd></div>
+              <div><dt>工具</dt><dd>Blender · Eevee 预览 / Cycles 出图</dd></div>
+              <div><dt>关键动作</dt><dd>构图与视角选择 · 环境光塑造 · 渲染时间优化</dd></div>
+              <div><dt>结果</dt><dd>◯◯ 待填 —— 例如：用于 ◯◯ 场景的视觉提案</dd></div>
+            </div>
+          </div>
+          <div class="case__media reveal reveal-d1">
+            <div class="tile tile--wide"><img src="../assets/img/d3-03.svg" alt="场景概念"></div>
+            <div class="tile tile--wide"><img src="../assets/img/exp-02.svg" alt="结构组成"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band sec" data-nav="light">
+    <div class="wrap">
+      <div class="split">
+        <div class="col-a"><span class="t-micro reveal">能力 / Capabilities</span></div>
+        <div class="col-b">
+          <ul class="caps reveal">
+            <li><b>建模</b><span>硬表面建模 · 拓扑优化 · 修改器与非破坏性流程</span></li>
+            <li><b>材质灯光</b><span>程序化材质 · PBR · 三点布光 · HDRI 环境</span></li>
+            <li><b>渲染</b><span>Cycles / Eevee · 渲染设置与优化 · 后期合成</span></li>
+            <li><b>应用</b><span>产品渲染图 · 场景概念 · 设计提案可视化</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-l reveal"><a class="btn" href="experience.html"><span>看完整的项目经历</span><i aria-hidden="true">→</i></a></div>
+    </div>
+  </section>
+
+  <nav class="band navnext" aria-label="章节导航">
+    <a href="ai.html" style="--row-accent:var(--ch-ai)">
+      <span class="dir">← 上一章 03</span>
+      <span class="name">AI 应用</span>
+    </a>
+    <a class="align-end" href="life.html" style="--row-accent:var(--ch-life)">
+      <span class="dir">下一章 05 →</span>
+      <span class="name">兴趣爱好</span>
+    </a>
+  </nav>
+
+</main>
+
+<footer class="band band--ink foot" data-nav="dark">
+  <div class="wrap">
+    <div class="foot__cta">
+      <div class="stack">
+        <span class="t-micro">Contact / 联系</span>
+        <h2 class="t-h1">有活儿，<em class="t-italic">聊两句。</em></h2>
+      </div>
+      <div class="stack-s" style="justify-items:end;text-align:right">
+        <span class="t-micro t-micro--bare" style="color:var(--muted)">长期接受合作与外包</span>
+        <a class="link-arrow" href="https://github.com/benzhujohn">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="foot__mailrow">
+      <a class="foot__mail" href="mailto:hello@example.com">hello@example.com</a>
+    </div>
+
+    <div class="foot__bottom">
+      <a href="../index.html">← 返回首页</a>
+      <span>© <span data-year>2026</span> 朱本</span>
+      <a href="#">回到顶部 ↑</a>
+    </div>
+  </div>
+  <span class="foot__pagename" aria-hidden="true">3D</span>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

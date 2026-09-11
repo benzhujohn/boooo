@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 应用 · 作品集 | 朱本</title>
+<meta name="description" content="AI 应用作品集：用 WorkBuddy 编排自动化流程，用 ComfyUI 与 Liblib 搭建可控图像生成工作流，把 AI 从玩具变成生产力。">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230B0B0C'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23D8452A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="progress"><div class="progress__bar"></div></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="../index.html" aria-label="回到首页">
+      <span class="nav__mark">朱</span>
+      <span>PORTFOLIO<span style="opacity:.45"> / 2026</span></span>
+    </a>
+    <nav class="nav__links" aria-label="主导航">
+      <a class="nav__link" href="../index.html#works">作品板块</a>
+      <a class="nav__link" href="../index.html#experience">项目经历</a>
+      <a class="nav__link" href="../index.html#about">关于</a>
+      <a class="nav__link" href="../index.html#contact">联系</a>
+    </nav>
+    <button class="nav__toggle" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="menu">
+  <nav class="menu__list" aria-label="菜单">
+    <a class="menu__item" href="../index.html#works"><i>01</i>作品板块</a>
+    <a class="menu__item" href="web.html"><i>02</i>网站建站</a>
+    <a class="menu__item" href="graphic.html"><i>03</i>平面设计</a>
+    <a class="menu__item" href="ai.html"><i>04</i>AI 应用</a>
+    <a class="menu__item" href="three-d.html"><i>05</i>3D 渲染</a>
+    <a class="menu__item" href="life.html"><i>06</i>兴趣爱好</a>
+    <a class="menu__item" href="experience.html"><i>07</i>项目经历</a>
+    <a class="menu__item" href="../index.html#contact"><i>08</i>联系</a>
+  </nav>
+  <div class="menu__foot">
+    <span>基于 GitHub Pages 托管</span>
+    <a href="mailto:hello@example.com">hello@example.com</a>
+  </div>
+</div>
+
+<main>
+
+  <section class="band band--ink phero ch-ai" data-nav="dark">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="phero__glow"></div>
+      <div class="hero__noise"></div>
+    </div>
+    <div class="wrap" style="position:relative;z-index:2">
+      <span class="phero__no reveal">03</span>
+      <div class="phero__grid">
+        <div class="stack">
+          <span class="t-micro reveal">Chapter 03 / AI Workflow</span>
+          <h1 class="t-h1 reveal reveal-d1">AI 应用</h1>
+          <p class="t-lead reveal reveal-d2" style="color:rgba(242,241,237,.72)">
+            把 AI 从「玩具」变成「生产力」。用 WorkBuddy 编排自动化流程，
+            用 ComfyUI 与 Liblib 做可控的图像生成与创意探索——重点不是生成，而是稳定复现。
+          </p>
+        </div>
+        <div class="stack reveal reveal-d3">
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">工具与方向</span>
+          <ul class="phero__badges">
+            <li class="chip">WorkBuddy</li>
+            <li class="chip">ComfyUI</li>
+            <li class="chip">Liblib</li>
+            <li class="chip">LoRA</li>
+            <li class="chip">ControlNet</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band sec" data-nav="light">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div class="shead__row">
+          <span class="t-micro">作品 / Works</span>
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">4 个项目</span>
+        </div>
+      </div>
+
+      <div class="filters mt-m">
+        <button class="is-active" data-filter="all">全部</button>
+        <button data-filter="WorkBuddy">WorkBuddy</button>
+        <button data-filter="ComfyUI">ComfyUI</button>
+        <button data-filter="Liblib">Liblib</button>
+        <button data-filter="提效">效率提升</button>
+      </div>
+
+      <div class="grid-2 mt-l">
+        <a class="work reveal" href="#" data-cat="WorkBuddy 提效">
+          <div class="tile tile--wide">
+            <span class="tile__badge">WorkBuddy</span>
+            <img src="../assets/img/ai-01.svg" alt="智能体自动化工作流">
+            <span class="tile__cap"><span>自动化工作流</span><span>编排</span></span>
+          </div>
+          <div class="work__meta"><h3>内容自动化流水线</h3><p>定时任务 · 全流程串联</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="#" data-cat="ComfyUI">
+          <div class="tile tile--wide">
+            <span class="tile__badge">ComfyUI</span>
+            <img src="../assets/img/ai-02.svg" alt="ComfyUI 节点工作流">
+            <span class="tile__cap"><span>节点工作流</span><span>可控生成</span></span>
+          </div>
+          <div class="work__meta"><h3>ComfyUI 可控生成</h3><p>LoRA · ControlNet · 批处理</p></div>
+        </a>
+        <a class="work reveal" href="#" data-cat="Liblib">
+          <div class="tile tile--wide">
+            <span class="tile__badge">Liblib</span>
+            <img src="../assets/img/ai-03.svg" alt="模型平台创意探索">
+            <span class="tile__cap"><span>创意探索</span><span>模型平台</span></span>
+          </div>
+          <div class="work__meta"><h3>Liblib 模型探索</h3><p>提示词 · 风格控制</p></div>
+        </a>
+        <a class="work reveal reveal-d1" href="#" data-cat="提效 WorkBuddy">
+          <div class="tile tile--wide">
+            <span class="tile__badge">Efficiency</span>
+            <img src="../assets/img/ai-04.svg" alt="批量素材生产">
+            <span class="tile__cap"><span>批量素材生产</span><span>Pipeline</span></span>
+          </div>
+          <div class="work__meta"><h3>批量素材生产</h3><p>设计流程提效</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--deep sec" data-nav="light">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div class="shead__row">
+          <span class="t-micro">精选案例 / Case Study</span>
+          <span class="t-micro t-micro--bare" style="color:var(--muted)">挑两个讲细一点</span>
+        </div>
+      </div>
+
+      <article class="case mt-l">
+        <div class="case__grid">
+          <div class="case__info reveal">
+            <span class="t-num">Case 01</span>
+            <h2 class="t-h2">每天自动产出内容</h2>
+            <p class="t-body">
+              选题依赖灵感、配图靠手找、Meta 每次都要重填——这类活最适合交给机器。
+              现在整条链路自动跑，人只在最后审一遍。
+            </p>
+            <div class="case__specs">
+              <div><dt>角色</dt><dd>流程设计 · 工具串联 · 异常处理</dd></div>
+              <div><dt>工具</dt><dd>WorkBuddy · WordPress 接口 · 开放图库 API</dd></div>
+              <div><dt>关键动作</dt><dd>标题查重 · 配图自动入库 · SEO 字段写入 · 失败重试</dd></div>
+              <div><dt>结果</dt><dd>◯◯ 待填 —— 例如：单篇耗时从 ◯ 分钟降到 ◯ 分钟</dd></div>
+            </div>
+          </div>
+          <div class="case__media reveal reveal-d1">
+            <div class="tile tile--wide"><img src="../assets/img/ai-01.svg" alt="工作流节点"></div>
+            <div class="case__media--2 grid-2">
+              <div class="tile tile--square"><img src="../assets/img/ai-02.svg" alt="节点细节"></div>
+              <div class="tile tile--square"><img src="../assets/img/ai-03.svg" alt="输出结果"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case case--flip">
+        <div class="case__grid">
+          <div class="case__info reveal">
+            <span class="t-num">Case 02</span>
+            <h2 class="t-h2">可控的图像生成</h2>
+            <p class="t-body">
+              AI 出图不难，难的是「每次都能出成同一个样子」。
+              用固定种子、LoRA 与 ControlNet 把变量锁住，才能进真实的生产流程。
+            </p>
+            <div class="case__specs">
+              <div><dt>角色</dt><dd>工作流搭建 · 风格控制</dd></div>
+              <div><dt>工具</dt><dd>ComfyUI · Liblib · LoRA 训练</dd></div>
+              <div><dt>关键动作</dt><dd>节点链路固化 · 风格一致性 · 批量变体输出</dd></div>
+              <div><dt>结果</dt><dd>◯◯ 待填 —— 例如：素材产出速度提升 ◯ 倍</dd></div>
+            </div>
+          </div>
+          <div class="case__media reveal reveal-d1">
+            <div class="tile tile--wide"><img src="../assets/img/ai-04.svg" alt="生成结果"></div>
+            <div class="tile tile--wide"><img src="../assets/img/exp-03.svg" alt="工作流结构"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band sec" data-nav="light">
+    <div class="wrap">
+      <div class="split">
+        <div class="col-a"><span class="t-micro reveal">能力 / Capabilities</span></div>
+        <div class="col-b">
+          <ul class="caps reveal">
+            <li><b>智能体编排</b><span>WorkBuddy 工作流设计 · 定时任务 · 跨工具串联</span></li>
+            <li><b>图像生成</b><span>ComfyUI 节点工作流 · LoRA 训练与应用 · ControlNet 精准控制</span></li>
+            <li><b>模型平台</b><span>Liblib 模型选择 · 提示词工程 · 风格一致性控制</span></li>
+            <li><b>落地场景</b><span>素材批量生产 · 数据处理 · 内容运营自动化 · 设计流程提效</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-l reveal"><a class="btn" href="experience.html"><span>看完整的项目经历</span><i aria-hidden="true">→</i></a></div>
+    </div>
+  </section>
+
+  <nav class="band navnext" aria-label="章节导航">
+    <a href="graphic.html" style="--row-accent:var(--ch-graphic)">
+      <span class="dir">← 上一章 02</span>
+      <span class="name">平面设计</span>
+    </a>
+    <a class="align-end" href="three-d.html" style="--row-accent:var(--ch-d3)">
+      <span class="dir">下一章 04 →</span>
+      <span class="name">3D 渲染</span>
+    </a>
+  </nav>
+
+</main>
+
+<footer class="band band--ink foot" data-nav="dark">
+  <div class="wrap">
+    <div class="foot__cta">
+      <div class="stack">
+        <span class="t-micro">Contact / 联系</span>
+        <h2 class="t-h1">有活儿，<em class="t-italic">聊两句。</em></h2>
+      </div>
+      <div class="stack-s" style="justify-items:end;text-align:right">
+        <span class="t-micro t-micro--bare" style="color:var(--muted)">长期接受合作与外包</span>
+        <a class="link-arrow" href="https://github.com/benzhujohn">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="foot__mailrow">
+      <a class="foot__mail" href="mailto:hello@example.com">hello@example.com</a>
+    </div>
+
+    <div class="foot__bottom">
+      <a href="../index.html">← 返回首页</a>
+      <span>© <span data-year>2026</span> 朱本</span>
+      <a href="#">回到顶部 ↑</a>
+    </div>
+  </div>
+  <span class="foot__pagename" aria-hidden="true">AI</span>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
